@@ -9,12 +9,12 @@ const generateToken = async (req, res) => {
     const tokenList = await sdk.getTokenListTokens();
 
     // coinGecko
-    let data = await CoinGeckoClient.coins.all()();
+    let data = await CoinGeckoClient.coins.all();
 
     return res.send({
       status: 200,
       message: 'generated',
-      data: data
+      data: tokenList
     });
   } catch (err) {
     console.log('this is the api err ====>>>>', err);
@@ -24,11 +24,6 @@ const generateToken = async (req, res) => {
 
 export { generateToken };
 
-//Sdk.getTokenListTokens is not a function
-
-//https://www.coingecko.com/en/api/documentation
-
-// https://bitquery.io/blog/coinswap-api
 
 //TokenListToken {
 //   address: '0x8E870D67F660D95d5be530380D0eC0bd388289E1',
