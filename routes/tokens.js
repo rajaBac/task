@@ -10,6 +10,6 @@ const limiter = rateLimit({
     max : 50 , //50 requests
 })
 
-router.get('/get-all', limiter,generateToken);
+router.get('/get-all', limiter ,generateToken);
 
 export default router;
